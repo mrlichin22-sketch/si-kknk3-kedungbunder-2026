@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Sistem Informasi KKN Kelompok 3 UNU Cirebon</title>
+    <meta name="description" content="Sistem Informasi & Manajemen KKN Kelompok 3 UNU Cirebon TA 2025/2026 - Desa Kedung Bunder, Gempol, Brebes" />
+
+    <!-- Favicon & PWA Icons -->
+    <link rel="icon" type="image/jpeg" href="/logo.jpg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo.jpg" />
+    <link rel="shortcut icon" href="/logo.jpg" type="image/jpeg" />
+
+    <!-- Web App Manifest (Dukungan Instalasi PWA di Android, iOS, Laptop & PC) -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Open Graph & Meta Share Tags (Facebook, WhatsApp, Twitter, Telegram) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Sistem Informasi KKN Kelompok 3 UNU Cirebon" />
+    <meta property="og:description" content="Sistem Informasi & Manajemen KKN Kelompok 3 UNU Cirebon TA 2025/2026 - Desa Kedung Bunder, Gempol, Brebes" />
+    <meta property="og:image" content="/pwa-512.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sistem Informasi KKN Kelompok 3 UNU Cirebon" />
+    <meta name="twitter:description" content="Sistem Informasi & Manajemen KKN Kelompok 3 UNU Cirebon TA 2025/2026 - Desa Kedung Bunder, Gempol, Brebes" />
+    <meta name="twitter:image" content="/pwa-512.jpg" />
+
+    <!-- Mobile Navigation & Status Bar Color -->
+    <meta name="theme-color" content="#059669" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="SI-KKN 3" />
+    <meta name="application-name" content="SI-KKN 3 Kedung Bunder" />
+    
+    <!-- Google Identity Services (GSI) untuk Integrasi Google Drive & Google Sheets Real-Time -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </head>
+  <body class="bg-slate-950 text-slate-100 selection:bg-emerald-500 selection:text-white">
+    <!-- Kontainer Root Aplikasi -->
+    <div id="root"></div>
+
+    <!-- Script Utama React/TypeScript -->
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- PWA Offline Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(err => {
+            console.log('SW registration skipped:', err);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
